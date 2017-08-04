@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .header-container {
+            background-image: url(//lorempixel.com/1000/1000/food);
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            color: white;
+            min-height: 500px;
+            position: relative;
+        }
+        .header {
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            padding: 50px;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+        .header h1 {
+            text-align: center;
+            white-space: nowrap;
+            font-size: 100px;
+        }
+        .header p {
+            font-style: italic;
+            text-align: center;
+        }
+        .navbar {
+            margin-bottom: 0;
+        }
+        .description {
+            text-align: center;
+            padding: 50px;
+        }
+        .ai-stuff {
+            background-color: #999999;
+            background-size: cover;
+            background-position: center;
+            min-height: 100px;
+            padding: 50px;
+        }
+        .ai-stuff-content {
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .daniel-headshot {
+            width: 300px;
+            height: 300px;
+            flex: 0 0 300px;
+        }
+        .figure-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .circle-text-container {
+            flex: 0;
+            padding-left: 50px;
+        }
+        .circle {
+            border-radius: 50% 50%;
+            background-color: transparent;
+            border: 3px dotted white;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+        .circle.gluten-free-circle {
+            top: 60px;
+            left: 80px;
+        }
+        .circle.blueberries-circle {
+            top: 100px;
+            left: 160px;
+        }
+        .circle.ciders-circle {
+            top: 180px;
+            left: 120px;
+        }
+        .circle-text {
+            color: white;
+            font-size: 25px;
+            white-space: nowrap;
+        }
+        .line {
+            height: 3px;
+            background-color: white;
+            position: absolute;
+        }
+        .line.gluten-free-line {
+            top: 46px;
+            left: 122px;
+            transform: rotateZ(-16deg);
+            width: 225px;
+        }
+        .line.blueberries-line {
+            top: 87px;
+            left: 201px;
+            transform: rotateZ(-28deg);
+            width: 150px;
+        }
+        .line.ciders-line {
+            width: 204px;
+            top: 141px;
+            left: 151px;
+            transform: rotateZ(-32deg);
+        }
+        .text-container {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+            color: white;
+        }
+        .text-container p, .text-container li {
+            font-size: 20px;
+        }
+        .figure {
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+        }
+
+        .meal-plans {
+            padding: 20px;
+            padding-bottom: 50px;
+        }
+        .meal-plans-content {
+            max-width: 1000px;
+            display: flex;
+            flex-flow: row wrap;
+            margin: 0 auto;
+        }
+        .meal-plans-title {
+            text-align: center;
+        }
+        .meal-plan-column {
+            flex: 1;
+            text-align: center;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px 10px 50px 10px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            background-color: #CCCCCC;
+            border-radius: 10px;
+            position: relative;
+            top: 0;
+        }
+        .meal-plan-column:hover {
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            top: -5px;
+            transition: all 0.1s ease-out;
+        }
+        .meal-plan-count-number {
+            font-size: 100px;
+        }
+        .meal-plan-cost {
+            font-size: 70px;
+        }
+        .team {
+            background-color: #CCCCCC;
+            text-align: center;
+            padding: 50px;
+        }
+        .team .team-photo {
+            background-image: url(images/chris-photo.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 300px;
+            height: 300px;
+            border-radius: 50% 50%;
+            margin: 0 auto;
+        }
+        .funny-text {
+            display: none;
+        }
+        .team .team-photo-container {
+            display: inline-block;
+        }
+        .team .team-photo-container:hover .team-photo {
+            background-image: url(images/chris-funny-photo.jpg);
+        }
+        .team .team-photo-container:hover .funny-text {
+            display: block;
+        }
+        .team .team-photo-container:hover .normal-text {
+            display: none;
+        }
+        .contact-us {
+            text-align: center;
+        }
+        .contact-us-body {
+            display: flex;
+        }
+        .location-container, .contact-us-info {
+            flex: 1;
+        }
+        .footer {
+            min-height: 60px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Cognitive Cuisines</a>
+            </div>
+        </div>
+    </nav>
+    <section class="header-container">
+        <div class="header">
+            <h1>Cuisines Just Got Smarter</h1>
+            <p>Artificial Intelligence meets Culinary Intelligence</p>
+            <p>Culinary science at its finest</p>
+            <p>Welcome to Cognitive Cuisines</p>
+        </div>
+    </section>
+    <section class="description">
+        <h2>The meal delivery service catered to <b>YOU</b></h2>
+        <h3>Personalized meals based on your dietary needs and desires</h3>
+    </section>
+    <section class="ai-stuff">
+        <div class="ai-stuff-content">
+            <div class="figure-container">
+                <div class="figure">
+                    <img class="daniel-headshot" src="https://static1.squarespace.com/static/594c09f19f745612a7fc8078/t/59556b2db6ac5069d2adedc2/1498780130629/Asset+3.png?format=300w">
+                    <div class="circle-text-container">
+                        <div class="gluten-free circle-text">Gluten-free</div>
+                        <div class="blueberries circle-text">Hates blueberries</div>
+                        <div class="ciders circle-text">Likes Ciders</div>
+                    </div>
+                    <div class="circle gluten-free-circle"></div>
+                    <div class="circle blueberries-circle"></div>
+                    <div class="circle ciders-circle"></div>
+                    <div class="line gluten-free-line"></div>
+                    <div class="line blueberries-line"></div>
+                    <div class="line ciders-line"></div>
+                </div>
+            </div>
+            <div class="text-container">
+                <h2>Powered by Artificial Intelligence</h2>
+                <p>Using our world-class algorithms, data structures, bubble sorts, and Cognition Engines, we are able to detect your dietary requirements as well as your tastebud preferences with <strong>99.9%</strong> accuracy. Our engines are able to detect:</p>
+                <ul>
+                    <li>Allergies with gluten, nuts, etc.</li>
+                    <li>Foods and flavors you love</li>
+                    <li>Foods and flavors you hate</li>
+                    <li>Foods and flavors that you haven't tried but may also like</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="meal-plans">
+        <h2 class="meal-plans-title">Our Weekly Meal Plans</h2>
+        <div class="meal-plans-content">
+            <div class="meal-plan-column">
+                <div class="meal-plan-count">
+                    <span class="meal-plan-count-number">1</span> <span class="meal-plan-count-label">meal per week</span>
+                </div>
+                <div class="meal-plan-cost">$500</div>
+                <div class="meal-plan-per-meal">($500 per meal)</div>
+            </div>
+            <div class="meal-plan-column">
+                <div class="meal-plan-count">
+                    <span class="meal-plan-count-number">6</span> <span class="meal-plan-count-label">meals per week</span>
+                </div>
+                <div class="meal-plan-cost">$30</div>
+                <div class="meal-plan-per-meal">($5 per meal)</div>
+            </div>
+            <div class="meal-plan-column">
+                <div class="meal-plan-count">
+                    <span class="meal-plan-count-number">83</span> <span class="meal-plan-count-label">meals per week</span>
+                </div>
+                <div class="meal-plan-cost">$0.50</div>
+                <div class="meal-plan-per-meal">(2.17 Zimbabwe dollars per meal)</div>
+            </div>
+        </div>
+    </section>
+    <section class="team">
+        <h1>Our Team</h1>
+        <div class="team-photo-container">
+            <div class="team-photo"></div>
+            <h3 class="normal-text">It's just me.</h3>
+            <h3 class="funny-text">Whoa I'm so funny too!</h3>
+        </div>
+    </section>
+    <section class="contact-us">
+        <h1>Contact Us</h1>
+        <div class="contact-us-body">
+            <div class="location-container">
+                <h3>Our Offices</h3>
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center=Orange%20County,CA&zoom=12&size=400x400">
+                <p>Somewhere around here probably.</p>
+            </div>
+            <div class="contact-us-info">
+                <h3>Our Info</h3>
+                <div>Landline Phone: (111) 111 - 1111</div>
+                <div>Cellular Phone: (222) 222 - 2222</div>
+                <div>My Mom's Phone: (333) 333 - 3333</div>
+                <div>Email: xxpwnthenubzxx@earthlink.co</div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        I did it you guys. This is a thing now.
+    </footer>
+</body>
+</html>
